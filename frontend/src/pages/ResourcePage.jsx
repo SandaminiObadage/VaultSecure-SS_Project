@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuthStore } from '../store/authStore';
 import { useNavigate } from 'react-router-dom';
-import api from '../services/api';
+import api from '../Services/api';
 import ResourceDetail from '../components/ResourceDetail';
 import ResourceForm from '../components/ResourceForm';
 

@@ -5,28 +5,36 @@ VaultSecure-SS Project
 VaultSecure-SS is a comprehensive full-stack application designed for secure, user-centric resource management. It features an intuitive frontend built with React and Vite, complemented by a robust backend powered by Node.js, Express, and MongoDB. The app also incorporates advanced security measures, including email verification, password reset capabilities, and reCAPTCHA protection.
 
 🗂 Project Structure
-VaultSecure-SS
+auth-proj(SS)
 ├── .env
-├── .vscode/
-│   └── settings.json
+├── .gitignore
 ├── backend/
 │   ├── controllers/
-│   │   └── resource.controller.js
+│   │   ├── auth_controller.js
+│   │   └── resource.controllers.js
 │   ├── db/
 │   │   └── connectDB.js
-│   ├── Firebase/
 │   ├── index.js
 │   ├── mailtrap/
+│   │   ├── emails.js
+│   │   ├── emailTemplates.js
+│   │   └── mailtrap.config.js
 │   ├── middleware/
+│   │   ├── morganMiddleware.js
+│   │   ├── roleMiddleware.js
+│   │   └── verifyToken.js
 │   ├── models/
-│   │   └── resource.model.js
-│   ├── Oauth/
+│   │   ├── log.model.js
+│   │   ├── user_model.js
+│   │   └── ...
 │   ├── routes/
 │   │   └── resource.routes.js
 │   ├── utils/
+│   │   ├── generateTokenAndSetCookie.js
+│   │   └── ...
 │   ├── validators/
+│   │   └── ...
 ├── frontend/
-│   ├── .env
 │   ├── .gitignore
 │   ├── eslint.config.js
 │   ├── index.html
@@ -36,7 +44,6 @@ VaultSecure-SS
 │   ├── README.md
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── CommentForm.jsx
 │   │   │   ├── FloatingShape.jsx
 │   │   │   ├── Input.jsx
 │   │   │   ├── LoadingSpinner.jsx
@@ -58,19 +65,11 @@ VaultSecure-SS
 │   │   │   └── authStore.js
 │   │   ├── services/
 │   │   │   └── api.js
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   ├── main.jsx
-│   │   └── vite.config.js
+│   │   ├── tailwind.config.js
+│   │   ├── vite.config.js
+│   │   └── firebase.js
 ├── package.json
-└── SQL Server Management Studio/
-    ├── Code Snippets/
-    ├── GUI DATABASE/
-    ├── Inventory_Backup_2024-4-3.sql
-    ├── MEDI BID/
-    ├── mysqldump/
-    ├── SQL QUESTION QUERIES/
-    └── SQL Server Scripts1/
+├── README.md
 
 🚀 Installation Guide
 Backend Setup:

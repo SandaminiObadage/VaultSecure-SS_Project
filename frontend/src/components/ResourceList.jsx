@@ -1,7 +1,7 @@
 // frontend/src/components/ResourceList.jsx
 import  { useEffect, useState } from 'react';
 import { useAuthStore } from '../store/authStore';
-import api from '../services/api';
+import api from '../Services/api';
 import ResourceDetail from './ResourceDetail';
 
 const ResourceList = () => {

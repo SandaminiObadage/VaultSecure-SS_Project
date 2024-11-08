@@ -1,5 +1,5 @@
 // frontend/src/components/Reaction.jsx
-import api from '../services/api';
+import api from '../Services/api';
 
 import PropTypes from 'prop-types';
 import {useAuthStore} from '../store/authStore.js';

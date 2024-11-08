@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useAuthStore } from "../store/authStore";
-import api from "../services/api";
+import api from "../Services/api";
 import CommentForm from "./CommentForm";
 import Reaction from "./Reaction";
 import { FaThumbsUp, FaThumbsDown, FaChevronDown, FaChevronUp } from "react-icons/fa";

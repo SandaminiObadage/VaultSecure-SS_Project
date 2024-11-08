@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 //import { useAuthStore } from '../store/authStore.js';
-import api from '../services/api';
+import api from '../Services/api';
 
 const ResourceForm = ({ resource, onSave }) => {
   

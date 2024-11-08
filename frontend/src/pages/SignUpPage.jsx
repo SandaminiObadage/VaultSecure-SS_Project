@@ -170,10 +170,10 @@ const SignUpPage = () => {
                         </p>
                     )}
 
-                    {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>}
+                    
                     {/* Password Strength Meter */}
                     <PasswordStrengthMeter password={password} />
-                    {error && <p className="text-red-500 text-sm">{error}</p>}
+                    {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>}
 
                     <div className="my-4 flex justify-center">
                         <div className="bg-gray-900 rounded-lg shadow-lg p-4">

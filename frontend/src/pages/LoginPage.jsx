@@ -6,6 +6,7 @@ import Input from '../components/Input'; // Adjust the path according to your pr
 import shieldImage from '../images/shield.png';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from "../store/authStore";
+import OAuth from '../components/OAuth'; // Adjust the path according to your project structure
 
 
 
@@ -79,7 +80,10 @@ const LoginPage = () => {
 					>
 						{isLoading ? <Loader className='w-6 h-6 animate-spin  mx-auto' /> : "Login"}
 					</motion.button>
+					<OAuth/>
 				</form>
+
+				
 			</div>
 			<div className='px-8 py-4 bg-gray-900 bg-opacity-50 flex justify-center'>
 				<p className='text-sm text-gray-400'>

@@ -3,7 +3,8 @@ import { body,param } from 'express-validator';
 
 // Custom password validation function
 const isStrongPassword = (password) => {
-    const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+  const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&#])[A-Za-z\d@$!%?&#]{8,}$/;
+
   return strongPasswordRegex.test(password);
 };
 

@@ -1,14 +1,33 @@
 import { motion } from "framer-motion";
 import { useAuthStore } from "../store/authStore";
 import { formatDate } from "../utils/date";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 const HomePage = () => {
 	const { user, logout } = useAuthStore();
+	const navigate = useNavigate();
+	const token = user.token;
+	const role = user.role;
+	useEffect(() => {
+		console.log("Token:", token);
+		if (token) {
+			localStorage.setItem("authToken", token);
+		}
+	}, [token]);
+
+	const handleNavigateToResources = () => {
+		navigate("/resources");
+	  };
 
 	const handleLogout = () => {
+		localStorage.removeItem("authToken");
 		logout();
 	};
+	const handleNavigateToLogs = () => {
+		navigate("/logs");
+	  };
 	return (
 		<motion.div
 			initial={{ opacity: 0, scale: 0.9 }}
@@ -18,7 +37,7 @@ const HomePage = () => {
 			className='max-w-md w-full mx-auto mt-10 p-8 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-xl shadow-2xl border border-gray-800'
 		>
 			<h2 className='text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-600 text-transparent bg-clip-text'>
-				Dashboard
+				VaultSecure
 			</h2>
 			
 			<div className='space-y-6'>
@@ -54,6 +73,43 @@ const HomePage = () => {
 					</p>
 				</motion.div>
 			</div>
+			<motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+        className="mt-4"
+      >
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={handleNavigateToResources}
+          className="w-full py-3 px-4 bg-gradient-to-r from-green to-green text-white 
+          font-bold rounded-lg shadow-lg hover:from-blue hover:to-blue-200
+          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 mb-4"
+        >
+          Go to Accounts
+        </motion.button>
+      </motion.div>
+	  {role === 'Admin' && (
+         <motion.div
+         initial={{ opacity: 0, y: 20 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ delay: 0.6 }}
+         className="mt-4"
+       >
+         <motion.button
+           whileHover={{ scale: 1.05 }}
+           whileTap={{ scale: 0.95 }}
+           onClick={handleNavigateToLogs}
+           className="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white 
+           font-bold rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-700
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 mb-4"
+         >
+           Go to logs
+         </motion.button>
+       </motion.div>
+        
+      )}
 
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}

@@ -14,6 +14,8 @@ import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./store/authStore";
 import { useEffect } from "react";
 import { Home } from "lucide-react";
+import ResourcePage from "./pages/ResourcePage";
+import LogPage from "./pages/LogPage";
 
 // protect routes that require authentication
 const ProtectedRoute = ({ children }) => {
@@ -100,6 +102,22 @@ function App() {
 						<RedirectAuthenticatedUser>
 							<ResetPasswordPage />
 						</RedirectAuthenticatedUser>
+					}
+				/>
+				<Route
+					path="/resources"
+					element={
+						<ProtectedRoute>
+							<ResourcePage />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/logs"
+					element={
+						<ProtectedRoute>
+							<LogPage />
+						</ProtectedRoute>
 					}
 				/>
 				{/* catch all routes */}

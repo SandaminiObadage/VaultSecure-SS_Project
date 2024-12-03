@@ -1,7 +1,7 @@
 // frontend/src/services/api.js
 import axios from 'axios';
 
-const API_URL = "https://api.sandaminiobadage.me/api";
+const API_URL = "https://api.sandaminiobadage.me:5000/api";
 console.log('API_URL:', API_URL); // Add this line to verify the environment variable
 
 const api = axios.create({

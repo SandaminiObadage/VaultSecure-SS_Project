@@ -3,7 +3,7 @@ import axios from "axios";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { app } from '../firebase';
 
-const API_URL = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth";
+const API_URL = "https://api.sandaminiobadage.me/api/auth";
 
 axios.defaults.withCredentials = true;
 

@@ -31,7 +31,7 @@ const LogPage = () => {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/logs", {
+        const response = await axios.get("http://152.42.241.32:5000/api/logs", {
           headers: { Authorization: `Bearer ${token}` },
           params: {
             page: page, // Send current page

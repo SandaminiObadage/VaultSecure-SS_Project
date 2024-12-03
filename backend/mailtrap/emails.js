@@ -60,8 +60,8 @@ export const sendVerificationEmail = async (email, verificationToken) => {
     catch(error){
         console.log(error);
         throw new Error('Failed to send password reset email:${error}');
- }
- };
+ }
+ };
 
 export const sendResetSuccessEmail = async (email) => {
     const recipient = [{ email }];
@@ -78,5 +78,5 @@ export const sendResetSuccessEmail = async (email) => {
     catch(error){
         console.log(error);
         throw new Error('Error sending password reset success email:${error}');
- }
- };
+ }
+ };
